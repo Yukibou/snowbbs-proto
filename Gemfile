@@ -25,6 +25,9 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
+gem 'bootswatch-rails'
+gem 'dotenv-rails'
+
 group :development do
   gem 'better_errors'
   gem 'foreman'
