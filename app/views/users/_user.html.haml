@@ -1,5 +1,7 @@
 %td
   = link_to user.email, user
+%td= user.wp_author_id
+%td= user.wp_author_login
 %td
   = simple_form_for(user) do |f|
     = f.select(:role, User.roles.keys.map {|role| [role.titleize,role]})
