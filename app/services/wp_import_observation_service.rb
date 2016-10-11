@@ -18,8 +18,8 @@ class WpImportObservationService
       puts creator
       ob.user = User.find_by(wp_author_login: creator)
 
-      ob.wp_post_id = item.xpath('post_id').text
-      ob.posted_at = item.xpath('post_date').text.to_datetime
+      ob.wp_post_id = item.xpath('wp:post_id').text
+      ob.posted_at = item.xpath('wp:post_date').text.to_datetime
 
 
       meta_nodes = item.xpath('wp:postmeta')
