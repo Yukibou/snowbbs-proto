@@ -1,21 +1,25 @@
 %h1 Listing observations
 
-%table
+%table.table.table-bordered
   %thead
     %tr
-      %th Observer
-      %th
-      %th
-      %th
+      - Observation::BASIC_ATTRIBUTES.each do |attr|
+        %th= attr
 
   %tbody
     - @observations.each do |observation|
       %tr
-        %td= observation.observer
-        %td= link_to 'Show', observation
-        %td= link_to 'Edit', edit_observation_path(observation)
-        %td= link_to 'Destroy', observation, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+        - Observation::BASIC_ATTRIBUTES.each do |attr|
+          - case attr
+          - when 'link'
+            %td= link_to '掲示板', observation.send(attr)
+          - when 'user'
+            %td= observation.user.wp_author_login
+          - else
+            %td= observation.send(attr)
+        -#%td= link_to 'Show', observation
+        -#%td= link_to 'Edit', edit_observation_path(observation)
+        -#%td= link_to 'Destroy', observation, :method => :delete, :data => { :confirm => 'Are you sure?' }
 %br
 
-= link_to 'New Observation', new_observation_path
+-#= link_to 'New Observation', new_observation_path
