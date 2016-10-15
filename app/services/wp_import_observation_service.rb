@@ -1,6 +1,6 @@
 require 'nokogiri'
 class WpImportObservationService
-  def self.call
+  def call
     puts "start..."
 
     file = File.read('doc/wordpress.xml')
@@ -21,7 +21,10 @@ class WpImportObservationService
 
       ob.wp_post_id = item.xpath('wp:post_id').text
       ob.posted_at = item.xpath('wp:post_date').text.to_datetime
-      ob.category = item.xpath('category').text
+
+      area = item.xpath('category').text
+      ob.area = Area.find_by(name: area)
+      ob.category = nil
 
       meta_nodes = item.xpath('wp:postmeta')
       meta_nodes.each do |node|
