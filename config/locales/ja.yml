@@ -200,3 +200,18 @@ ja:
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       short: "%y/%m/%d %H:%M"
     pm: 午後
+# モデル名
+  activerecord:
+    models:
+      user: 観察者
+      observation: 観察データ
+
+# モデルの属性名
+  activerecord:
+    attributes:
+      user:
+        wp_author_id: WP_ID
+        wp_author_login: 観察者
+        observation_count: 観察数
+      obseravtion:
+        title: タイトル
