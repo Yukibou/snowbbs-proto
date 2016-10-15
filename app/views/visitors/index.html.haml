@@ -11,12 +11,12 @@
       %p 上位１０名
       %table.table
         %tbody
-          %th= t('activerecord.attributes.user.observation_count')
           %th= t('activerecord.attributes.user.wp_author_login')
+          %th= t('activerecord.attributes.user.observation_count')
           - @users.each do |user|
             %tr
-              %td= user.observations.count
               %td= user.wp_author_login
+              %td= user.observations.count
 
     .col-md-4.portfolio-item
       %h3
