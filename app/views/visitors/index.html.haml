@@ -24,12 +24,12 @@
       %p すべて
       %table.table
         %tbody
-          %th= t('activerecord.attributes.observation.category')
-          %th= t('activerecord.attributes.observation.count')
-          - @range.each do |name, count|
+          %th= t('activerecord.attributes.observation.area')
+          %th= t('activerecord.attributes.observation.area_count')
+          - @areas.each do |area|
             %tr
-              %td= name.presence || '未登録'
-              %td= count
+              %td= area.name
+              %td= area.observations.count
 
     .col-md-4.portfolio-item
       %h3
