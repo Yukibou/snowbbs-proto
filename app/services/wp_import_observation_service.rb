@@ -21,9 +21,9 @@ class WpImportObservationService
 
       ob.wp_post_id = item.xpath('wp:post_id').text
       ob.posted_at = item.xpath('wp:post_date').text.to_datetime
+      ob.category = item.xpath('category').text
 
       meta_nodes = item.xpath('wp:postmeta')
-
       meta_nodes.each do |node|
         key = node.xpath('wp:meta_key').text
         # 読み飛ばし属性
