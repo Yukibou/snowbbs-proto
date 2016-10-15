@@ -1,13 +1,9 @@
-/ Page Content
 .container
-  / Page Header
   .row
     .col-lg-12
       %h1.page-header
         ダッシュボード
         %small 観察データ統計
-  / /.row
-  / Projects Row
   .row
     .col-md-4.portfolio-item
       %h3
@@ -24,8 +20,16 @@
 
     .col-md-4.portfolio-item
       %h3
-        %a{:href => "#"} Project Name
-      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+        %a{:href => "#"} 地域別
+      %p すべて
+      %table.table
+        %tbody
+          %th= t('activerecord.attributes.observation.range')
+          %th= t('activerecord.attributes.observation.count')
+          - @range.each do |name, count|
+            %tr
+              %td= name.presence || '未登録'
+              %td= count
 
     .col-md-4.portfolio-item
       %h3
