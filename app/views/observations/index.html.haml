@@ -15,6 +15,8 @@
             %td= link_to '掲示板', observation.send(attr)
           - when 'user'
             %td= observation.user.wp_author_login
+          - when 'photos'
+            %td= image_tag "http://www.nadare.jp/#{observation.photos}", width: '320' if observation.photos.present?
           - else
             %td= observation.send(attr)
         -#%td= link_to 'Show', observation
