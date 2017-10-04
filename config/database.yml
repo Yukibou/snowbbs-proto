@@ -16,9 +16,9 @@ development:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: snowbbs_development
+  database: snowbbs-proto_development
   pool:     5
-  username: snowbbs
+  username: snowbbsproto
   password:
   template: template0
 
@@ -44,9 +44,9 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: snowbbs_test
+  database: snowbbs-proto_test
   pool:     5
-  username: snowbbs
+  username: snowbbsproto
   password:
   template: template0
 
@@ -54,8 +54,8 @@ production:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: snowbbs_production
+  database: snowbbs-proto_production
   pool:     5
-  username: snowbbs
+  username: snowbbsproto
   password:
   template: template0
